@@ -1,6 +1,6 @@
 module LambdaFunctions
     class PersistAndNotify
-      def self.process(event:, context:)
+      def self.handle(event:, context:)
         print 'Hello World'
       end
     end

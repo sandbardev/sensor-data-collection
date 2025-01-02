@@ -1,0 +1,16 @@
+Resources:
+  LambdaFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: persist-and-notify-lambda
+      Handler: functions.persist_and_notify.handle
+      Runtime: ruby3.2
+      Code:
+        S3Bucket: "persist-and-notify-bucket"
+        S3Key: persist_and_notify.zip 
+      Role: "arn:aws:iam::985539768306:role/persist-and-notify-role"
+      MemorySize: 128
+      Timeout: 60
+      Environment:
+        Variables:
+          SOME_ENV_VAR: "template"
